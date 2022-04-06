@@ -1,38 +1,48 @@
 #include <iostream>
-#include <string>
+#include<iostream>
+#include<string.h>
 using namespace std;
+
+
 class charInput{
 public:
-void add(char c) {
-	cin>>c;	
- }
-std::string getValue() { return NULL; }
+void add(char c) { }
+std::string getValue()
+{
+	return NULL;
+}
 };
+
+
 class numInput : public charInput {
-void add (char c)
+
+public:
+string array;
+void add(char c)
 {
-char current = ' ' ;
-if( (c>=0) && (c<=9))
+if(int(c)>47 && int(c)<58)
 {
-	cin>>c;
-	current = current+c;
-	return current ;
+	array += c;
 }
-else
-{
-    cout<<"ignore"<<endl;
-	
-	//return 0;
-}
+//cout<<arr<<endl;
 }
 
- };
-int main(){
-charInput* inputC = new charInput();
-numInput* inputN = new numInput();
-input->add('1');
-input->add('a');
-input->add('0');
-cout << input->getValue();
-// the output should be 10
+
+void getvalue()
+{
+	cout<<"current value is: "<<array<<endl;;
+}
+
+};
+
+
+int main()
+{
+	numInput in;
+	in.add('1');
+	in.add('c');
+	in.add('0');
+	in.getvalue();
+
+
 }
